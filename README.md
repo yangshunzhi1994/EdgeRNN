@@ -22,9 +22,6 @@ IEMOCAP_data.h5 is generated using preprocess_IEMOCAP.py.
 COMMANDS_data.h5 is generated using preprocess_COMMANDS.py. It is worth noting that the COMMANDS dataset is very large. If you need to use data augmentation in your project, you must ensure that your computer's memory is larger than 48G. The memory of the computer of this project is 64G. You can increase your SWAP space by the following methods:http://smilejay.com/2012/09/new-or-add-swap/.
 
 The thop used in the project is a statistical method of parameters and calculations, which can be installed by the following method:https://github.com/Lyken17/pytorch-OpCounter. It is worth noting that the thop cannot count the calculation amount and parameter amount of RNN/LSTM/GRU. You have to calculate this part manually. To calculate the complexity of the RNN, you can view the following tutorial:http://www.wildml.com/2015/10/recurrent-neural-network-tutorial-part-4-implementing-a-grulstm-rnn-with-python-and-theano/
-
 https://github.com/NVIDIA-developer-blog/code-samples/issues/7
-
 https://datascience.stackexchange.com/questions/10615/number-of-parameters-in-an-lstm-model
-
 https://towardsdatascience.com/counting-no-of-parameters-in-deep-learning-models-by-hand-8f1716241889
