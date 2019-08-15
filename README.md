@@ -27,3 +27,5 @@ The thop used in the project is a statistical method of parameters and calculati
       2.https://github.com/NVIDIA-developer-blog/code-samples/issues/7
       3.https://datascience.stackexchange.com/questions/10615/number-of-parameters-in-an-lstm-model
       4.https://towardsdatascience.com/counting-no-of-parameters-in-deep-learning-models-by-hand-8f1716241889
+
+The data augmentation uses the audiomentsations library, which can be installed by:https://github.com/iver56/audiomentations
