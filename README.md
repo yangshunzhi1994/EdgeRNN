@@ -6,4 +6,13 @@ Speech emotion recognition uses the IEMOCAP dataset, which can be obtained from 
 
 Speech keyword recognition uses the Google's Speech Commands dataset, which can be obtained from the following web page:http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz.
 
-Decompress these two datasets and put them in the data directory. The directory for data is as follows:
+Decompress these two datasets and put them in the data directory. That is, the data folder contains the following files:
+
+      ./data: 
+             --IEMOCAP_full_release  folder
+             --speech_commands_v0.01 folder
+             --COMMANDS.py
+             --COMMANDS_data.h5
+             --IEMOCAP.py
+             --IEMOCAP_data.h5
+    
