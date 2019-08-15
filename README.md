@@ -15,4 +15,8 @@ Decompress these two datasets and put them in the data directory. That is, the d
              --COMMANDS_data.h5
              --IEMOCAP.py
              --IEMOCAP_data.h5
-    
+             
+
+IEMOCAP_data.h5 is generated using preprocess_IEMOCAP.py.
+
+COMMANDS_data.h5 is generated using preprocess_COMMANDS.py.
