@@ -16,7 +16,6 @@ from data.IEMOCAP import IEMOCAP
 from data.COMMANDS import COMMANDS
 from torch.autograd import Variable
 from EdgeRNN import EdgeRNN
-from EdgeRNNG import EdgeRNNG
 from thop import profile
 from audiomentations import Compose, AddGaussianNoise, TimeStretch, PitchShift, Shift
 
@@ -69,8 +68,6 @@ else:
 
 if opt.model == 'EdgeRNN':    
     net = EdgeRNN(num_class=NUM_CLASSES) 
-elif opt.model == 'EdgeRNNG':    
-    net = EdgeRNNG(num_class=NUM_CLASSES)
 
 if opt.dataset  == 'COMMANDS':
     flops, params = profile(net, input_size=(1, 152, 32))
@@ -79,16 +76,6 @@ else:
 
 print("The FLOS of this model is  %0.3f M" % float(flops/1024/1024))
 print("The params of this model is  %0.3f M" % float(params/1024/1024))
-
-if opt.dataset == 'IEMOCAP' and opt.model == 'EdgeRNNG' and os.path.exists('EdgeRNNG_IEMOCAP_model.pt'):
-    # Load checkpoint.
-    print('==> Resuming from checkpoint EdgeRNNG_IEMOCAP_model.pt ..')
-    Private_checkpoint = torch.load('EdgeRNNG_IEMOCAP_model.pt')
-    best_PrivateTest_acc = Private_checkpoint['best_PrivateTest_acc']
-    best_PrivateTest_acc_epoch = Private_checkpoint['best_PrivateTest_acc_epoch']
-    print ('best_PrivateTest_acc is '+ str(best_PrivateTest_acc))
-    net.load_state_dict(Private_checkpoint['net'], strict=False)
-    start_epoch = Private_checkpoint['best_PrivateTest_acc_epoch'] + 1
 
 if opt.dataset == 'IEMOCAP' and opt.model == 'EdgeRNN' and os.path.exists('EdgeRNN_IEMOCAP_model.pt'):
     # Load checkpoint.
@@ -104,16 +91,6 @@ if opt.dataset == 'COMMANDS' and opt.model == 'EdgeRNN' and os.path.exists('Edge
     # Load checkpoint.
     print('==> Resuming from checkpoint EdgeRNN_COMMANDS_model.pt ..')
     Private_checkpoint = torch.load('EdgeRNN_COMMANDS_model.pt')
-    best_PrivateTest_acc = Private_checkpoint['best_PrivateTest_acc']
-    best_PrivateTest_acc_epoch = Private_checkpoint['best_PrivateTest_acc_epoch']
-    print ('best_PrivateTest_acc is '+ str(best_PrivateTest_acc))
-    net.load_state_dict(Private_checkpoint['net'], strict=False)
-    start_epoch = Private_checkpoint['best_PrivateTest_acc_epoch'] + 1
-    
-if opt.dataset == 'COMMANDS' and opt.model == 'EdgeRNNG' and os.path.exists('EdgeRNNG_COMMANDS_model.pt'):
-    # Load checkpoint.
-    print('==> Resuming from checkpoint EdgeRNNG_COMMANDS_model.pt ..')
-    Private_checkpoint = torch.load('EdgeRNNG_COMMANDS_model.pt')
     best_PrivateTest_acc = Private_checkpoint['best_PrivateTest_acc']
     best_PrivateTest_acc_epoch = Private_checkpoint['best_PrivateTest_acc_epoch']
     print ('best_PrivateTest_acc is '+ str(best_PrivateTest_acc))
@@ -227,12 +204,8 @@ def PrivateTest(epoch):
         }
         if opt.dataset == 'COMMANDS' and opt.model == 'EdgeRNN':
             torch.save(state, 'EdgeRNN_COMMANDS_model.pt')
-        if opt.dataset == 'COMMANDS' and opt.model == 'EdgeRNNG':
-            torch.save(state, 'EdgeRNNG_COMMANDS_model.pt')
         if opt.dataset == 'IEMOCAP' and opt.model == 'EdgeRNN':
             torch.save(state, 'EdgeRNN_IEMOCAP_model.pt')
-        if opt.dataset == 'IEMOCAP' and opt.model == 'EdgeRNNG':
-            torch.save(state, 'EdgeRNNG_IEMOCAP_model.pt')
         best_PrivateTest_acc = PrivateTest_acc
         best_PrivateTest_acc_epoch = epoch
 
