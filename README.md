@@ -32,5 +32,5 @@ The data augmentation uses the audiomentsations library, which can be installed 
 
 Corresponding papers for this project：
 
-       Yang S, Gong Z, Ye K, et al. EdgeRNN: A Compact Speech Recognition Network with Spatio-temporal
-       Features for Edge Computing[J]. IEEE Access, 2020.
+       Yang S, Gong Z, Ye K, et al. EdgeRNN: A Compact Speech Recognition Network with Spatio-temporal Features 
+       for Edge Computing[J]. IEEE Access, 2020.
