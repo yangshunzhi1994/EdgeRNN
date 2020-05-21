@@ -1,4 +1,4 @@
-# EdgeRNN：Efficient Speech Recognition Network for Edge Computing
+# EdgeRNN: A Compact Speech Recognition Network with Spatio-temporal Features for Edge Computing
 
 This is an efficient speech recognition network. The paper has verified the efficiency of the network on the two tasks of speech emotion recognition and speech keyword recognition.
 
@@ -29,3 +29,6 @@ The thop used in the project is a statistical method of parameters and calculati
       4.https://towardsdatascience.com/counting-no-of-parameters-in-deep-learning-models-by-hand-8f1716241889
 
 The data augmentation uses the audiomentsations library, which can be installed by:https://github.com/iver56/audiomentations
+
+Corresponding papers for this project：
+      Yang S, Gong Z, Ye K, et al. EdgeRNN: A Compact Speech Recognition Network with Spatio-temporal Features for Edge Computing[J]. IEEE Access, 2020.
