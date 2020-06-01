@@ -18,7 +18,7 @@ from torch.autograd import Variable
 from EdgeRNN import EdgeRNN
 from EdgeRNNG import EdgeRNNG
 from thop import profile
-from audiomentations import Compose, AddGaussianNoise, TimeStretch, PitchShift, Shift
+#from audiomentations import Compose, AddGaussianNoise, TimeStretch, PitchShift, Shift     ##Data augmentation
 
 parser = argparse.ArgumentParser(description='PyTorch RAVDESS RAVDESS Training')
 parser.add_argument('--model', type=str, default='EdgeRNN', help='CNN architecture')
