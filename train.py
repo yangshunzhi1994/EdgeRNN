@@ -54,7 +54,7 @@ transform_train = Compose([
 if opt.dataset  == 'COMMANDS':
     print ("This is COMMANDS")
     NUM_CLASSES = 11
-    trainset = COMMANDS(split = 'Training', transform=transform_train)
+    trainset = COMMANDS(split = 'Training', transform=transform_train) #If you do not use data augmentation, transform = None.
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=opt.train_bs, shuffle=True, num_workers=4)
     PrivateTestset = COMMANDS(split = 'PrivateTest')
     PrivateTestloader = torch.utils.data.DataLoader(PrivateTestset, batch_size=opt.test_bs, shuffle=False, num_workers=1)
@@ -62,7 +62,7 @@ if opt.dataset  == 'COMMANDS':
 else:
     print ("This is IEMOCAP")
     NUM_CLASSES = 4
-    trainset = IEMOCAP(split = 'Training', transform=transform_train)
+    trainset = IEMOCAP(split = 'Training', transform=transform_train)  #If you do not use data augmentation, transform = None.
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=opt.train_bs, shuffle=True, num_workers=4)
     PrivateTestset = IEMOCAP(split = 'PrivateTest')
     PrivateTestloader = torch.utils.data.DataLoader(PrivateTestset, batch_size=opt.test_bs, shuffle=False, num_workers=1)
