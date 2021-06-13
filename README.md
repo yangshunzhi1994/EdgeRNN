@@ -32,5 +32,25 @@ The data augmentation uses the audiomentsations library, which can be installed 
 
 Corresponding papers for this project：
 
-       Yang S, Gong Z, Ye K, et al. EdgeRNN: A Compact Speech Recognition Network with Spatio-temporal Features 
-       for Edge Computing[J]. IEEE Access, 2020.
+
+       @article{DBLP:journals/access/YangGYWHH20,
+       author    = {Shunzhi Yang and
+               Zheng Gong and
+               Kai Ye and
+               Yungen Wei and
+               Zhenhua Huang and
+               Zheng Huang},
+               title     = {EdgeRNN: {A} Compact Speech Recognition Network With Spatio-Temporal
+               Features for Edge Computing}, 
+               journal   = {{IEEE} Access},
+               volume    = {8},
+               pages     = {81468--81478},
+               year      = {2020},
+               url       = {https://doi.org/10.1109/ACCESS.2020.2990974},
+               doi       = {10.1109/ACCESS.2020.2990974},
+               timestamp = {Tue, 16 Jun 2020 17:15:32 +0200},
+               biburl    = {https://dblp.org/rec/journals/access/YangGYWHH20.bib},
+               bibsource = {dblp computer science bibliography, https://dblp.org}
+               }
+
+
